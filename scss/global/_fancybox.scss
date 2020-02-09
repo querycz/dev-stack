@@ -1,0 +1,18 @@
+@function max($numbers...) {
+	@return m#{a}x(#{$numbers})
+}
+
+@function min($numbers...) {
+	@return m#{i}n(#{$numbers})
+}
+
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox";
+
+// .fancybox-content {
+// 	border-radius: 5px;
+// }
+
+.fancybox-button--zoom,
+.fancybox-button--play {
+	display: none !important;
+}

@@ -1,0 +1,36 @@
+@import "../_variables";
+
+.pagination-extended {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.pagination-extended-item {
+	display: inline;
+	margin: 0 1px;
+
+	a {
+		display: inline-block;
+		padding: 5px 15px 2px;
+		color: #151515;
+		font-size: 1.8rem;
+		line-height: 1.6;
+		text-decoration: none;
+		background: #f9f9f9;
+		transition: .6s;
+
+		&:hover {
+			color: #fff;
+			background: blue;
+			transform: scale(1.05);
+		}
+	}
+}
+
+.pagination-extended-active {
+	a {
+		padding: 10px 20px 6px;
+		color: #fff;
+		background: blue;
+	}
+}

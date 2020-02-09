@@ -1,0 +1,51 @@
+.wpcf7 {
+	.ajax-loader {
+		display: none !important;
+		width: 160px !important;
+		height: 20px !important;
+		margin: 0 !important;
+		background-image: url("#{$public}/images/loading.svg") !important;
+		background-size: cover !important;
+
+		&.is-active {
+			display: block !important;
+			margin: 30px auto !important;
+		}
+	}
+
+	// input[type="submit"] {
+	// 	@extend .button;
+	// 	margin-top: 20px;
+	// }
+
+	.wpcf7-not-valid-tip {
+		color: red;
+		font-size: 15px;
+	}
+
+	.wpcf7-response-output {
+		padding: 5px 10px;
+		margin: 0;
+	}
+
+	.wpcf7-validation-errors {
+		color: #fff;
+		background: red;
+		border: 0;
+	}
+
+	.wpcf7-mail-sent-ok {
+		color: #fff;
+		background: green;
+		border: 0;
+	}
+
+	.wpcf7-list-item {
+		margin-left: 0;
+
+		label {
+			align-items: center;
+			display: flex;
+		}
+	}
+}
