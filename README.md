@@ -1,3 +1,3 @@
 # Dev Stack 🛠
 
-Just a basic dev-stack
+Just a basic dev-stack we use in WordPress websites development.
