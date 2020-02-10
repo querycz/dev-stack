@@ -22,7 +22,7 @@
     "hamburgers": "^1.1.3",
     "jquery": "^3.4.1",
     "node-waves": "^0.7.6",
-    "single-page-nav": "git+https://github.com/querycz/single-page-nav#1.2.1",
+    "scrollnav": "^3.0.2",
     "smooth-scroll": "^16.1.0",
     "swiper": "^5.1.0"
   }
