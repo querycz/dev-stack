@@ -14,7 +14,7 @@ var browserSync = require('browser-sync').create();
 
 
 
-// onError Message
+// Notify Messages
 var onError = function(error) {
 	notify({
 		title: 'Gulp Task Error',
@@ -26,7 +26,7 @@ var onError = function(error) {
 
 
 
-// Compile Init JavaScripts to Public Folder and Uglify Them
+// Compile JavaScript Inits to Public Folder and Uglify Them
 gulp.task('javascript', gulp.series( function() {
 	return gulp.src('js/*.js')
 		.pipe(plumber({errorHandle: onError}))
@@ -55,7 +55,7 @@ gulp.task('javascript', gulp.series( function() {
 
 
 
-// Copy JS Components to Public Vendor Folder
+// Copy JavaScript Components to Public Vendor Folder
 gulp.task('javascript-vendor', gulp.series( function() {
 	return gulp.src([
 		'node_modules/jquery/dist/jquery.min.js', // jQuery
@@ -79,7 +79,7 @@ gulp.task('javascript-vendor', gulp.series( function() {
 
 
 
-// Compile and Autoprefix SASS Global Style
+// Compile SASS and Autoprefix Global Style
 gulp.task('style', gulp.series( function() {
 	return gulp.src('scss/style.scss')
 		.pipe(plumber({errorHandle: onError}))
@@ -107,7 +107,7 @@ gulp.task('style', gulp.series( function() {
 
 
 
-// SASS Compile and Autoprefix Separate Components Style
+// Compile SASS and Autoprefix Separate Components Style
 gulp.task('style-components', gulp.series( function() {
 	return gulp.src('scss/components/*.scss')
 		.pipe(plumber({errorHandle: onError}))
@@ -177,17 +177,17 @@ gulp.task('browser-sync', gulp.series( function() {
 
 
 
+// Build All
+gulp.task('build', gulp.series('style', 'style-components', 'javascript-vendor', 'javascript', 'md5-css', 'md5-css-components', 'md5-js'));
+
+
+
 // Watch
 gulp.task('watch', gulp.series( function() {
 	gulp.watch('scss/**/*.scss', gulp.series(['style', 'style-components'])); // Watch SCSS
 	gulp.watch('js/**/*.js', gulp.series(['javascript', 'javascript-vendor'])); // Watch JS
 	gulp.watch('../**/*.php').on('change', browserSync.reload); // Watch PHP
 }));
-
-
-
-// Build All
-gulp.task('build', gulp.series('style', 'style-components', 'javascript-vendor', 'javascript', 'md5-css', 'md5-css-components', 'md5-js'));
 
 
 
