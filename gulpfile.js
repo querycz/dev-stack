@@ -25,7 +25,7 @@ var onError = function(error) {
 
 
 
-// Compile JavaScript Inits to Public Folder and Uglify Them
+// Compile JavaScript to Public Folder and Uglify Them
 gulp.task('javascript', gulp.series( function() {
 	return gulp.src('js/*.js')
 		.pipe(plumber({errorHandle: onError}))
@@ -54,13 +54,13 @@ gulp.task('javascript', gulp.series( function() {
 
 
 
-// Copy JavaScript Components to Public Vendor Folder
+// Copy JavaScript Vendor Components to Public Folder and Uglify Them
 gulp.task('javascript-vendor', gulp.series( function() {
 	return gulp.src([
-		'node_modules/jquery/dist/jquery.min.js', // jQuery
-		'node_modules/swiper/js/swiper.min.js', // Swiper
-		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js', // Fancybox
-		'node_modules/node-waves/dist/waves.js', // Waves
+		'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/swiper/js/swiper.min.js',
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+		'node_modules/node-waves/dist/waves.js',
 	])
 		.pipe(uglify())
 		.pipe(gulp.dest('../public/js/vendor'))
@@ -78,55 +78,28 @@ gulp.task('javascript-vendor', gulp.series( function() {
 
 
 
-// Compile SASS and Autoprefix Global Style
+// Compile SASS and Autoprefix to CSS
 gulp.task('style', gulp.series( function() {
-	return gulp.src('scss/style.scss')
-		.pipe(plumber({errorHandle: onError}))
-		.pipe(sass({outputStyle: 'compressed'}))
-		.on('error', onError)
-		.pipe(rename('style.css'))
-		.pipe(gulp.dest('../'))
-
-		// Autoprefixer
-		.pipe(autoprefixer({
-			cascade: false
-		}))
-		.pipe(gulp.dest('../'))
-
-		// Notify
-		.pipe(notify({
-			title: 'Gulp Task Complete',
-			message: 'Global style has been compiled',
-			onLast: true
-		}))
-
-		// browserSync
-		// .pipe(browserSync.stream({once: true}));
-}));
-
-
-
-// Compile SASS and Autoprefix Separate Components Style
-gulp.task('style-components', gulp.series( function() {
-	return gulp.src('scss/components/*.scss')
+	return gulp.src('scss/**/*.scss')
 		.pipe(plumber({errorHandle: onError}))
 		.pipe(sass({outputStyle: 'compressed'}))
 		.on('error', onError)
 		.pipe(rename({
-			suffix: '.min'
+			suffix: '.min',
+			dirname: ''
 		}))
-		.pipe(gulp.dest('../public/css/'))
+		.pipe(gulp.dest('../public/css'))
 
 		// Autoprefixer
-		.pipe(autoprefixer({
-			cascade: false
-		}))
-		.pipe(gulp.dest('../public/css/'))
+		// .pipe(autoprefixer({
+		// 	cascade: false
+		// }))
+		// .pipe(gulp.dest('../public/css/'))
 
 		// Notify
 		.pipe(notify({
 			title: 'Gulp Task Complete',
-			message: 'Components styles have been compiled',
+			message: 'Styles have been compiled',
 			onLast: true
 		}))
 
@@ -137,17 +110,12 @@ gulp.task('style-components', gulp.series( function() {
 
 
 // MD5 Hash
-gulp.task('md5-css', gulp.parallel( function() {
-	return gulp.src('../style.css')
-		.pipe(md5(10, '../functions/add-style.php'));
-}));
-
-gulp.task('md5-css-components', gulp.parallel( function() {
+gulp.task('md5-style', gulp.parallel( function() {
 	return gulp.src('../public/css/*')
 		.pipe(md5(10, '../**/*.php'));
 }));
 
-gulp.task('md5-js', gulp.parallel( function () {
+gulp.task('md5-javascript', gulp.parallel( function() {
 	return gulp.src('../public/js/**/*')
 		.pipe(md5(10, '../functions/*.php'));
 }));
@@ -155,7 +123,7 @@ gulp.task('md5-js', gulp.parallel( function () {
 
 
 // POT Translation
-gulp.task('pot', gulp.series( function () {
+gulp.task('pot', gulp.series( function() {
 	return gulp.src('../**/*.php')
 		.pipe(wppot( {
 			domain: 'template'
@@ -177,14 +145,14 @@ gulp.task('browser-sync', gulp.series( function() {
 
 
 // Build All
-gulp.task('build', gulp.series('style', 'style-components', 'javascript-vendor', 'javascript', 'md5-css', 'md5-css-components', 'md5-js'));
+gulp.task('build', gulp.series('style', 'javascript-vendor', 'javascript', 'md5-style', 'md5-javascript'));
 
 
 
 // Watch
 gulp.task('watch', gulp.series( function() {
-	gulp.watch('scss/**/*.scss', gulp.series(['style', 'style-components'])); // Watch SCSS
-	gulp.watch('js/**/*.js', gulp.series(['javascript', 'javascript-vendor'])); // Watch JS
+	gulp.watch('scss/**/*.scss', gulp.series('css')); // Watch SCSS
+	gulp.watch('js/**/*.js', gulp.series(['javascript', 'vendor'])); // Watch JS
 	gulp.watch('../**/*.php').on('change', browserSync.reload); // Watch PHP
 }));
 
