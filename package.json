@@ -1,6 +1,6 @@
 {
   "name": "dev-stack",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
@@ -14,7 +14,8 @@
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gulp-wp-pot": "latest"
+    "gulp-wp-pot": "latest",
+    "lodash.template": ">=4.5.0"
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.3",
