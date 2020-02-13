@@ -11,7 +11,7 @@ Just a basic Gulp based dev-stack with some frequently used NPM components and S
 - Gettex POT generation
 - Success and error notifications
 
-This dev-stack is usually used in a `src` folder of WordPress theme. With a few path modifications it can be used anywhere.
+This dev-stack is usually used in `src` folder of WordPress theme. With a few path modifications it can be used anywhere.
 
 ## Available Tasks
 - `$ gulp javascript` runs JavaScript compilation to `public/js` folder
