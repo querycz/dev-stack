@@ -91,10 +91,10 @@ gulp.task('style', gulp.series( function() {
 		.pipe(gulp.dest('../public/css'))
 
 		// Autoprefixer
-		// .pipe(autoprefixer({
-		// 	cascade: false
-		// }))
-		// .pipe(gulp.dest('../public/css/'))
+		.pipe(autoprefixer({
+			cascade: false
+		}))
+		.pipe(gulp.dest('../public/css/'))
 
 		// Notify
 		.pipe(notify({
