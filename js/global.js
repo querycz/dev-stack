@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 
 	// CF7 Floating Labels
-	$(".has-floating-label input").focus(function() {
+	$(".has-floating-label input, .has-floating-label textarea").focus(function() {
 		$(this).parent().siblings('label').addClass('has-value');
 	})
 	.blur(function() {
