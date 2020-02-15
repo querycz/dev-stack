@@ -151,7 +151,7 @@ gulp.task('build', gulp.series('style', 'javascript-vendor', 'javascript', 'md5-
 
 // Watch
 gulp.task('watch', gulp.series( function() {
-	gulp.watch('scss/**/*.scss', gulp.series('css')); // Watch SCSS
+	gulp.watch('scss/**/*.scss', gulp.series('style')); // Watch SCSS
 	gulp.watch('js/**/*.js', gulp.series(['javascript', 'vendor'])); // Watch JS
 	gulp.watch('../**/*.php').on('change', browserSync.reload); // Watch PHP
 }));
