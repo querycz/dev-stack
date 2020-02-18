@@ -112,12 +112,15 @@ gulp.task('style', gulp.series( function() {
 // MD5 Hash
 gulp.task('md5-style', gulp.parallel( function() {
 	return gulp.src('../public/css/*')
-		.pipe(md5(10, '../**/*.php'));
+		.pipe(md5(10, '../*.php'))
+		.pipe(md5(10, '../functions/add-style.php'))
+		.pipe(md5(10, '../page-templates/*'))
+		.pipe(md5(10, '../template-parts/*'));
 }));
 
 gulp.task('md5-javascript', gulp.parallel( function() {
 	return gulp.src('../public/js/**/*')
-		.pipe(md5(10, '../functions/*.php'));
+		.pipe(md5(10, '../functions/add-script.php'));
 }));
 
 
