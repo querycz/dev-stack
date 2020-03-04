@@ -10,8 +10,13 @@ $(document).ready(function() {
 
 
 	// Init Waves
-	// Waves.attach('.button', ['waves-light']);
-	// Waves.init();
+	Waves.attach('.button', ['waves-light']);
+	Waves.init();
+
+
+
+	// SmoothScroll
+	var scroll = new SmoothScroll('[data-scroll]');
 
 
 
@@ -33,15 +38,15 @@ $(document).ready(function() {
 
 
 	// CF7 Events
-	document.addEventListener( 'wpcf7mailsent', function( event ) {
-		if ( '952' == event.detail.contactFormId ) {
-			location = '/uspesne-odeslano/';
+	// document.addEventListener( 'wpcf7mailsent', function( event ) {
+	// 	if ( '952' == event.detail.contactFormId ) {
+	// 		location = '/uspesne-odeslano/';
 
-			// setTimeout( function() {
-			// 	$.fancybox.close();
-			// }, 3000);
-		}
-	}, false );
+	// 		// setTimeout( function() {
+	// 		// 	$.fancybox.close();
+	// 		// }, 3000);
+	// 	}
+	// }, false );
 
 
 
@@ -58,15 +63,6 @@ $(document).ready(function() {
 
 
 
-	// Single Page Nav
-	// $('.nav').singlePageNav({
-	// 	speed: 750,
-	// 	easing: 'swing',
-	// 	updateHash: true,
-	// 	// filter: ':not(.item-not-scroll .nav-link)',
-	// 	// currentClass: 'nav-link-is-active',
-	// 	offset: 0,
-	// 	threshold: 50
-	// });
+
 
 });

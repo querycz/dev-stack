@@ -61,6 +61,7 @@ gulp.task('javascript-vendor', gulp.series( function() {
 		'node_modules/swiper/js/swiper.min.js',
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 		'node_modules/node-waves/dist/waves.js',
+		'node_modules/smooth-scroll/dist/smooth-scroll.min.js',
 	])
 		.pipe(uglify())
 		.pipe(gulp.dest('../public/js/vendor'))
