@@ -1,6 +1,10 @@
 @import "../../node_modules/swiper/css/swiper";
+@import "../_variables";
 
-.swiper-slide {
+.hero {
+}
+
+.hero-swiper-slide {
 	align-items: center;
 	justify-content: center;
 	display: flex;

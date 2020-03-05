@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-	// Swiper
-	var mySwiper = new Swiper ('.swiper-container', {
+	// Hero Swiper
+	var mySwiper = new Swiper ('.hero-swiper-container', {
 		autoplay: {
 			delay: 5000,
 		},
