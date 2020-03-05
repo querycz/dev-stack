@@ -20,6 +20,19 @@ $(document).ready(function() {
 
 
 
+	// Single Page Nav
+	// $('.nav').singlePageNav({
+	// 	speed: 750,
+	// 	easing: 'swing',
+	// 	updateHash: true,
+	// 	// filter: ':not(.item-not-scroll .nav-link)',
+	// 	// currentClass: 'nav-link-is-active',
+	// 	offset: 0,
+	// 	threshold: 50
+	// });
+
+
+
 	// Fancybox
 	$("[data-fancybox]").fancybox({
 		// hash: true,

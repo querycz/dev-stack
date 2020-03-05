@@ -1,6 +1,6 @@
 {
   "name": "dev-stack",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
@@ -26,6 +26,7 @@
     "node-waves": "^0.7.6",
     "sal.js": "^0.7.2",
     "scrollnav": "^3.0.2",
+    "single-page-nav": "git+https://github.com/querycz/single-page-nav#1.2.1",
     "smooth-scroll": "^16.1.0",
     "swiper": "^5.1.0"
   }
