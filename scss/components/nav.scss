@@ -1,12 +1,28 @@
 @import "../_variables";
 
 .nav {
-	.nav-list {
+	.menu-list {
 	}
 
-	.nav-item {
+	.menu-item {
 	}
 
-	.nav-link {
+	.menu-link {
+	}
+}
+
+.nav-mobile {
+	.menu-list {
+	}
+
+	.menu-item {
+	}
+
+	.menu-link {
+	}
+
+	// Hide nav if screen size > @screen-md, ev. + 1
+	@media only screen and (min-width: $screen-md) {
+		display: none !important;
 	}
 }
