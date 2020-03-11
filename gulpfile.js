@@ -14,7 +14,7 @@ var browserSync = require('browser-sync').create();
 
 
 // Notify Messages
-var onError = function(error) {
+var onError = function (error) {
 	notify({
 		title: 'Gulp Task Error',
 		message: 'Check the console'
@@ -26,9 +26,9 @@ var onError = function(error) {
 
 
 // Compile JavaScript to Public Folder and Uglify Them
-gulp.task('javascript', gulp.series( function() {
+gulp.task('javascript', gulp.series(function () {
 	return gulp.src('js/*.js')
-		.pipe(plumber({errorHandle: onError}))
+		.pipe(plumber({ errorHandle: onError }))
 
 		// Babel
 		// .pipe(babel())
@@ -48,14 +48,14 @@ gulp.task('javascript', gulp.series( function() {
 			onLast: true
 		}))
 
-		// browserSync
-		// .pipe(browserSync.stream({once: true}));
+	// browserSync
+	// .pipe(browserSync.stream({once: true}));
 }));
 
 
 
 // Copy JavaScript Vendor Components to Public Folder and Uglify Them
-gulp.task('javascript-vendor', gulp.series( function() {
+gulp.task('javascript-vendor', gulp.series(function () {
 	return gulp.src([
 		'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/swiper/js/swiper.min.js',
@@ -74,16 +74,16 @@ gulp.task('javascript-vendor', gulp.series( function() {
 		}))
 
 		// browserSync
-		.pipe(browserSync.stream({once: true}));
+		.pipe(browserSync.stream({ once: true }));
 }));
 
 
 
 // Compile SASS and Autoprefix to CSS
-gulp.task('style', gulp.series( function() {
+gulp.task('style', gulp.series(function () {
 	return gulp.src('scss/**/*.scss')
-		.pipe(plumber({errorHandle: onError}))
-		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(plumber({ errorHandle: onError }))
+		.pipe(sass({ outputStyle: 'compressed' }))
 		.on('error', onError)
 		.pipe(rename({
 			suffix: '.min',
@@ -105,21 +105,21 @@ gulp.task('style', gulp.series( function() {
 		}))
 
 		// browserSync
-		.pipe(browserSync.stream({once: true}));
+		.pipe(browserSync.stream({ once: true }));
 }));
 
 
 
 // MD5 Hash
-gulp.task('md5-style', gulp.parallel( function() {
+gulp.task('md5-style', gulp.parallel(function () {
 	return gulp.src('../public/css/*')
 		.pipe(md5(10, '../*.php'))
 		.pipe(md5(10, '../functions/add-style.php'))
-		.pipe(md5(10, '../page-templates/*'))
-		.pipe(md5(10, '../template-parts/*'));
+		.pipe(md5(10, '../page-templates/**/*.php'))
+		.pipe(md5(10, '../template-parts/**/*.php'));
 }));
 
-gulp.task('md5-javascript', gulp.parallel( function() {
+gulp.task('md5-javascript', gulp.parallel(function () {
 	return gulp.src('../public/js/**/*')
 		.pipe(md5(10, '../functions/add-script.php'));
 }));
@@ -127,18 +127,18 @@ gulp.task('md5-javascript', gulp.parallel( function() {
 
 
 // POT Translation
-gulp.task('pot', gulp.series( function() {
+gulp.task('pot', gulp.series(function () {
 	return gulp.src('../**/*.php')
-		.pipe(wppot( {
+		.pipe(wppot({
 			domain: 'template'
-		} ))
+		}))
 		.pipe(gulp.dest('../../../languages/themes/template.pot'));
 }));
 
 
 
 // BrowserSync
-gulp.task('browser-sync', gulp.series( function() {
+gulp.task('browser-sync', gulp.series(function () {
 	browserSync.init({
 		notify: false,
 		proxy: "http://localhost:8080",
@@ -154,7 +154,7 @@ gulp.task('build', gulp.series('style', 'javascript-vendor', 'javascript', 'md5-
 
 
 // Watch
-gulp.task('watch', gulp.series( function() {
+gulp.task('watch', gulp.series(function () {
 	gulp.watch('scss/**/*.scss', gulp.series('style'));
 	gulp.watch('js/**/*.js', gulp.series(['javascript', 'javascript-vendor']));
 	gulp.watch('../**/*.php').on('change', browserSync.reload);
