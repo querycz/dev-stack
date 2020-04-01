@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
 	// Add title to the pictures acording to ther caption content
-	$('.gallery-item').each(function(){
+	$('.gallery-item').each(function() {
 		var link = $(this).find('a');
 		var caption = $(this).find('.gallery-caption');
 		link.attr('data-caption', caption.text());
@@ -66,8 +66,7 @@ $(document).ready(function() {
 	// CF7 Floating Labels
 	$(".has-floating-label input, .has-floating-label textarea").focus(function() {
 		$(this).parent().siblings('label').addClass('has-value');
-	})
-	.blur(function() {
+	}).blur(function() {
 		var text_val = $(this).val();
 		if (text_val === "") {
 			$(this).parent().siblings('label').removeClass('has-value');
