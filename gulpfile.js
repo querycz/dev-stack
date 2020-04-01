@@ -14,7 +14,7 @@ var browserSync = require('browser-sync').create();
 
 
 // Notify Messages
-var onError = function(error) {
+var onError = function (error) {
 	notify({
 		title: 'Gulp Task Error',
 		message: 'Check the console'
@@ -115,8 +115,8 @@ gulp.task('md5-style', gulp.parallel(function() {
 	return gulp.src('../public/css/*')
 		.pipe(md5(10, '../*.php'))
 		.pipe(md5(10, '../functions/add-style.php'))
-		.pipe(md5(10, '../page-templates/*'))
-		.pipe(md5(10, '../template-parts/*'));
+		.pipe(md5(10, '../page-templates/**/*.php'))
+		.pipe(md5(10, '../template-parts/**/*.php'));
 }));
 
 gulp.task('md5-javascript', gulp.parallel(function() {
