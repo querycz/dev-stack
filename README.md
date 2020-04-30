@@ -1,5 +1,5 @@
 # Dev Stack 🛠
-Just a basic Gulp based dev-stack with some frequently used NPM components and SCSS structure we use mostly during WordPress websites development.
+> Just a basic Gulp based dev-stack with some frequently used NPM components and SCSS structure we use mostly during WordPress websites development.
 
 ## Gulp Key Components
 - SASS compilation and autoprefix
