@@ -14,7 +14,7 @@ var browserSync = require('browser-sync').create();
 
 
 // Notify Messages
-var onError = function (error) {
+var onError = function(error) {
 	notify({
 		title: 'Gulp Task Error',
 		message: 'Check the console'

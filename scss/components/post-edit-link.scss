@@ -6,7 +6,8 @@
 @import "../_buttons";
 
 .post-edit-link,
-.edit-link a {
+.edit-link a,
+.tablepress caption a {
 	@extend .button;
 	padding: 6px 20px;
 	margin: 20px 0;
