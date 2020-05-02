@@ -1,6 +1,6 @@
 {
   "name": "dev-stack",
-  "version": "2.1.13",
+  "version": "2.1.14",
   "devDependencies": {
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
