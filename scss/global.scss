@@ -1,42 +1,23 @@
-// Variables
-@import "_variables";
+// Settings
+@import "_settings";
 
+// Tools
+// @import "_tools";
 
-// CSS framework
-@import "../node_modules/css-framework/scss/css-framework";
+// Generic
+@import "_generic";
 
+// Elements
+@import "_elements";
 
-// @font-face
-@import "_font-face";
+// Objects
+@import "objects/_button";
+@import "objects/_container";
+@import "objects/_fancybox";
+@import "objects/_form";
+@import "objects/_wpcf7";
+@import "objects/_waves";
+@import "objects/_css-tooltip";
 
-
-// Base Core Elements
-@import "_base";
-
-
-// Forms
-@import "_forms";
-
-
-// Buttons
-@import "_buttons";
-
-
-// WordPress Utilities
-@import "_wp-utilities";
-
-
-// Contact Form 7
-@import "_wpcf7";
-
-
-// Fancybox
-@import "_fancybox";
-
-
-// Waves
-@import "../node_modules/node-waves/src/scss/waves";
-
-
-// CSS Tooltip
-@import "../node_modules/css-tooltip/dist/css-tooltip";
+// Utilities
+@import "_utilities";

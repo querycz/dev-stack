@@ -1,4 +1,17 @@
-// Text Align
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+
+// WordPress Text Align
 .aligncenter {
 	display: block;
 	margin: 0 auto;
@@ -23,7 +36,7 @@
 }
 
 
-// Caption
+// WordPress Caption
 .wp-caption {
 	width: auto;
 
@@ -39,7 +52,7 @@
 }
 
 
-// Gallery
+// WordPress Gallery
 .gallery {
 	align-items: center;
 	flex-wrap: wrap;
@@ -151,7 +164,7 @@
 }
 
 
-// Gutenberg
+// WordPress Gutenberg
 .wp-block-columns {
 	@media only screen and (min-width: $screen-md) {
 		display: flex;

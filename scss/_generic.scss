@@ -1,0 +1,112 @@
+@import "../node_modules/normalize.css/normalize";
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	color: $font-color;
+	font: 62.5% / #{$line-height} $font-family;
+	text-size-adjust: 100%;
+
+	@-ms-viewport {
+		width: device-width;
+	}
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-size: $font-size;
+	text-align: center;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+aside {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+	font: #{$font-size} / #{$line-height} $font-family;
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	tr {
+	}
+
+	td {
+	}
+}
+
+ul,
+li {
+	padding: 0;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+h4 {
+	font-size: 1.8rem;
+}
+
+h5 {
+	font-size: 1.7rem;
+}
+
+h6 {
+	font-size: 1.6rem;
+}
+
+p {
+	padding: 0;
+	margin: $p-margin;
+}
+
+a {
+	color: inherit;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

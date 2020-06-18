@@ -1,0 +1,28 @@
+.form-group {
+	margin-bottom: 20px;
+
+	&.has-floating-label {
+		position: relative;
+
+		br {
+			display: none;
+		}
+
+		label {
+			position: absolute;
+			top: 12px;
+			left: 15px;
+			z-index: 100;
+			padding: 0 5px;
+			background-color: transparent;
+			transition: font-size .3s, top .3s, background-color .3s, color .3s;
+
+			&.has-value {
+				top: -8px;
+				color: #666;
+				font-size: 1.2rem;
+				background-color: #fff;
+			}
+		}
+	}
+}

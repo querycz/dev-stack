@@ -1,0 +1,40 @@
+// Custom Variables
+// $red: #ff5800;
+// $color-primary: $red;
+
+
+// General Variables
+$font-family: Arial, sans-serif;
+$font-size: 1.6rem;
+$line-height: 1.5;
+$font-color: #000;
+$p-margin: 20px 0;
+$public: "/app/themes/template/public";
+
+
+// Screen Sizes Variables
+$screen-sm: 600px;
+$screen-md: 900px;
+$screen-lg: 1200px;
+
+
+// Container Variables
+$container-breakpoint: $screen-md;
+$container-max-width: $screen-lg;
+$container-gutter: 10px;
+
+
+// @font-face
+// @font-face {
+// 	font-family: "Font Name";
+// 	font-style: normal;
+// 	font-weight: normal;
+
+// 	font-display: optional;
+// 	src: url("#{$assets}/font/Font.eot");
+// 	src: local("☺"),
+// 	url("#{$assets}/font/Font.woff") format("woff"),
+// 	url("#{$assets}/font/Font.otf") format("opentype"),
+// 	url("#{$assets}/font/Font.ttf") format("truetype"),
+// 	url("#{$assets}/font/Font.svg#webfont") format("svg");
+// }

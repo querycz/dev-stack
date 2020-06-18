@@ -1,0 +1,10 @@
+.container {
+	box-sizing: border-box;
+	padding: 0 $container-gutter;
+	margin: 0 auto;
+	text-align: left;
+
+	@media only screen and (min-width: $container-breakpoint) {
+		max-width: $container-max-width;
+	}
+}
