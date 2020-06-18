@@ -59,7 +59,7 @@ gulp.task('javascript-vendor', gulp.series(function() {
 	return gulp.src([
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
 		'node_modules/jquery/dist/jquery.min.js',
-		'node_modules/node-waves/dist/waves.js',
+		'node_modules/node-waves/dist/waves.min.js',
 		'node_modules/smooth-scroll/dist/smooth-scroll.min.js',
 		'node_modules/swiper/js/swiper.min.js',
 	])
